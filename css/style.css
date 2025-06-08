@@ -1611,3 +1611,209 @@ body {
   z-index: 1;
   border-radius: inherit; /* чтобы совпадал с формой кнопки */
 }
+
+@media (max-width: 320px) {
+  /* Top Bar */
+  .top-bar {
+    font-size: 0.75rem;
+    padding: 0.3rem 0;
+  }
+  
+  /* Logo */
+  .logo-img {
+    height: 2rem;
+  }
+  
+  /* Phone numbers */
+  .phone-main {
+    font-size: 1.2rem;
+  }
+  
+  .phone-secondary {
+    font-size: 0.8rem;
+  }
+  
+  /* Callback button */
+  .callback-btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  /* Promo Section */
+  .promo-section {
+    height: 280px;
+    border-radius: 15px;
+  }
+  
+  .promo-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .promo-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cars-left-badge {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    width: auto;
+    margin-bottom: 0.8rem;
+  }
+  
+  /* Car images */
+  .car-main {
+    width: 70%;
+    height: 45%;
+    left: 10%;
+    top: 30%;
+  }
+  
+  .car-side {
+    width: 55%;
+    height: 35%;
+    left: 25%;
+    top: 33%;
+  }
+  
+  .car-small {
+    width: 45%;
+    height: 30%;
+    left: 35%;
+    top: 35%;
+  }
+  
+  /* Slider dots */
+  .slider-dots {
+    bottom: 3%;
+    left: 0.5rem;
+    gap: 0.5rem;
+  }
+  
+  .slider-dot {
+    width: 12px;
+    height: 12px;
+  }
+  
+  /* Quick Selection */
+  .quick-selection {
+    padding: 0.8rem;
+    margin: 1.5rem auto;
+  }
+  
+  .section-title {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Brand list */
+  .brand-list li {
+    font-size: 0.7rem;
+    line-height: 2;
+    padding-left: 1.8rem;
+  }
+  
+  .brand-logo {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Price slider */
+  .price-mark {
+    font-size: 0.5rem;
+    flex-basis: 15%;
+  }
+  
+  /* Page titles */
+  .page-title,
+  .collections-title,
+  .special-offers-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Offer banner */
+  .offer-banner-title {
+    font-size: 1.2rem;
+  }
+  
+  .offer-banner-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .offer-banner-phone-input,
+  .offer-banner-submit-btn {
+    height: 50px;
+    font-size: 0.9rem;
+  }
+  
+  /* Collection cards */
+  .collection-card {
+    height: 180px;
+    border-radius: 15px;
+  }
+  
+  .collection-card-content {
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+  }
+  
+  .collection-card-title {
+    font-size: 1rem;
+  }
+  
+  .collection-card-btn {
+    width: 120px;
+    padding: 6px;
+    font-size: 0.8rem;
+  }
+  
+  /* Footer */
+  .footer {
+    padding-top: 30px;
+  }
+  
+  .footer-top {
+    padding-bottom: 30px;
+  }
+  
+  .footer-title {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+  
+  .footer-list li {
+    font-size: 0.8rem;
+  }
+  
+  /* Car loan form */
+  .car-loan-form .title {
+    font-size: 1.2rem;
+  }
+  
+  .car-loan-form .selector,
+  .car-loan-form .input-field,
+  .car-loan-form .submit-btn {
+    height: 40px;
+    font-size: 0.8rem;
+  }
+  
+  /* Navigation */
+  .main-menu-item {
+    font-size: 0.8rem;
+  }
+  
+  .nav-link {
+    font-size: 0.7rem;
+    padding: 0 0.2rem;
+  }
+  
+  /* Indicators */
+  .indicator-badge {
+    width: 1rem;
+    height: 1rem;
+    font-size: 0.6rem;
+  }
+}
