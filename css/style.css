@@ -1241,8 +1241,112 @@ body {
   padding: 10px 20px;
 }
 
+
+
+.tooltip {
+  position: absolute;
+  background-color: #eee;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.2s; /* Для плавного появления/исчезновения */
+  pointer-events: none; /* Чтобы подсказка не перехватывала клики */
+  z-index: 1000; /* Убедитесь, что подсказка отображается поверх других элементов */
+}
+
+.callback-btn {
+  position: relative;
+  transition: box-shadow 0.3s ease; /* Анимируем только box-shadow */
+  font-weight: bold;
+}
+
+.callback-btn::before,
+.callback-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit; /* Наследуем border-radius от кнопки */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0; /* Скрываем тени по умолчанию */
+  z-index: -1;
+}
+
+
+.callback-btn::before {
+  background-color: rgba(0, 0, 0, 0.15); /* Тень светлее */
+  transform: translate(2px, 2px);
+}
+
+.callback-btn::after {
+  background-color: rgba(0, 0, 0, 0.25); /* Тень темнее */
+  transform: translate(4px, 4px);
+}
+
+.callback-btn:hover::before,
+.callback-btn:hover::after {
+  opacity: 1; /* Показываем тени при наведении */
+}
+
+.callback-btn:active {
+    transform: translate(2px, 2px); /* Смещение кнопки при нажатии */
+}
+.callback-btn:active::before {
+    transform: translate(0, 0); /* Смещение тени при нажатии */
+}
+.callback-btn:active::after {
+    transform: translate(2px, 2px); /* Смещение тени при нажатии */
+}
+
+.logo-img {
+  animation: pulse 1.5s infinite; /* Запускаем анимацию pulse бесконечно */
+  /* Другие стили для logo-img, если нужны */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); /* Начальный размер */
+  }
+  50% {
+    transform: scale(1.05); /* Увеличиваем размер на 5% */
+  }
+  100% {
+    transform: scale(1); /* Возвращаемся к исходному размеру */
+  }
+}
+
+.bank-card {
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.bank-card img {
+  display: block;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+#showResultsBtn {
+  position: relative; /* чтобы добавить псевдоэлемент */
+  z-index: 0; /* для правильного наложения */
+}
+
+#showResultsBtn::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 0, 150, 0.3), rgba(0, 204, 255, 0.3));
+  pointer-events: none; /* чтобы кнопка оставалась кликабельной */
+  z-index: 1;
+  border-radius: inherit; /* чтобы совпадал с формой кнопки */
+}
+
 /* Responsive Styles */
-@media (max-width: 1199.98px) {
+@media (max-width: 1200px) {
   .main-menu-item {
     font-size: 0.9rem;
   }
@@ -1259,7 +1363,7 @@ body {
     width: 70%;
   }
 
-  @media (max-width: 991.98px) {
+  @media (max-width: 990px) {
     .top-bar {
       height: auto;
       padding: 0.5rem 0;
@@ -1384,7 +1488,7 @@ body {
     }
   }
 
-  @media (max-width: 767.98px) {
+  @media (max-width: 767px) {
     .page-title {
       font-size: 28px;
     }
@@ -1510,105 +1614,133 @@ body {
   }
 }
 
-.tooltip {
-  position: absolute;
-  background-color: #eee;
-  color: #333;
-  padding: 5px 10px;
-  border-radius: 5px;
-  opacity: 0;
-  transition: opacity 0.2s; /* Для плавного появления/исчезновения */
-  pointer-events: none; /* Чтобы подсказка не перехватывала клики */
-  z-index: 1000; /* Убедитесь, что подсказка отображается поверх других элементов */
-}
-
-.callback-btn {
-  position: relative;
-  transition: box-shadow 0.3s ease; /* Анимируем только box-shadow */
-  font-weight: bold;
-}
-
-.callback-btn::before,
-.callback-btn::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: inherit; /* Наследуем border-radius от кнопки */
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  opacity: 0; /* Скрываем тени по умолчанию */
-  z-index: -1;
-}
-
-
-.callback-btn::before {
-  background-color: rgba(0, 0, 0, 0.15); /* Тень светлее */
-  transform: translate(2px, 2px);
-}
-
-.callback-btn::after {
-  background-color: rgba(0, 0, 0, 0.25); /* Тень темнее */
-  transform: translate(4px, 4px);
-}
-
-.callback-btn:hover::before,
-.callback-btn:hover::after {
-  opacity: 1; /* Показываем тени при наведении */
-}
-
-.callback-btn:active {
-    transform: translate(2px, 2px); /* Смещение кнопки при нажатии */
-}
-.callback-btn:active::before {
-    transform: translate(0, 0); /* Смещение тени при нажатии */
-}
-.callback-btn:active::after {
-    transform: translate(2px, 2px); /* Смещение тени при нажатии */
-}
-
-.logo-img {
-  animation: pulse 1.5s infinite; /* Запускаем анимацию pulse бесконечно */
-  /* Другие стили для logo-img, если нужны */
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1); /* Начальный размер */
+@media (max-width: 380px) {
+  /* Базовые шрифты */
+  :root {
+    font-size: 14px;
   }
-  50% {
-    transform: scale(1.05); /* Увеличиваем размер на 5% */
+
+  /* Шапка */
+  .top-bar {
+    height: 2.2rem;
+    font-size: 0.8rem;
   }
-  100% {
-    transform: scale(1); /* Возвращаемся к исходному размеру */
+
+  /* Логотип */
+  .logo-img {
+    height: 2.8rem;
+  }
+
+  /* Телефоны */
+  .phone-main {
+    font-size: 1.2rem;
+  }
+  
+  .phone-secondary {
+    font-size: 0.9rem;
+  }
+
+  /* Кнопка обратного звонка */
+  .callback-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Промо-секция */
+  .promo-section {
+    height: 320px;
+    margin-top: 0.5rem;
+  }
+
+  .promo-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .promo-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cars-left-badge {
+    font-size: 0.8rem;
+    padding: 0.3rem 1rem;
+    width: auto;
+  }
+
+  /* Изображения автомобилей */
+  .car-main {
+    width: 60%;
+    height: 50%;
+  }
+
+  .car-side {
+    width: 45%;
+    height: 40%;
+  }
+
+  .car-small {
+    width: 35%;
+    height: 32%;
+  }
+
+  /* Точки слайдера */
+  .slider-dots {
+    bottom: 5%;
+    gap: 0.8rem;
+  }
+
+  /* Быстрый подбор */
+  .quick-selection {
+    padding: 1.2rem;
+    margin: 2rem auto;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .brand-list li {
+    font-size: 0.8rem;
+    line-height: 2.5;
+    padding-left: 2.5rem;
+  }
+
+  /* Заголовки страниц */
+  .page-title,
+  .collections-title,
+  .special-offers-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Карточки */
+  .collection-card {
+    height: 220px;
+  }
+
+  .collection-card-title {
+    font-size: 1.1rem;
+  }
+
+  /* Форма кредита */
+  .car-loan-form .title {
+    font-size: 1.3rem;
+  }
+
+  .car-loan-form .selector,
+  .car-loan-form .input-field,
+  .car-loan-form .submit-btn {
+    height: 42px;
+    font-size: 0.9rem;
+  }
+
+  /* Подвал */
+  .footer-list li {
+    font-size: 0.85rem;
+  }
+
+  .copyright {
+    font-size: 0.95rem;
   }
 }
-
-.bank-card {
-  perspective: 1000px;
-  cursor: pointer;
-}
-
-.bank-card img {
-  display: block;
-  width: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.6s ease;
-}
-
-#showResultsBtn {
-  position: relative; /* чтобы добавить псевдоэлемент */
-  z-index: 0; /* для правильного наложения */
-}
-
-#showResultsBtn::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(45deg, rgba(255, 0, 150, 0.3), rgba(0, 204, 255, 0.3));
-  pointer-events: none; /* чтобы кнопка оставалась кликабельной */
-  z-index: 1;
-  border-radius: inherit; /* чтобы совпадал с формой кнопки */
-}
-
