@@ -1165,6 +1165,42 @@ body {
   z-index: 1;
   border-radius: inherit; /* чтобы совпадал с формой кнопки */
 }
+/* Убираем устаревшую рамку у iframe */
+iframe[frameborder] {
+  border: none;
+}
+/* Обработка width="100%" и height="100%" как процентов */
+iframe[width="100%"],
+iframe[height="100%"] {
+  width: 100% !important;
+  height: 100% !important;
+}
+/* Дополнительная поддержка стандартных iframe */
+iframe {
+  max-width: 100%;
+  display: block;
+  border: none;
+}
+/* Для iframe с фиксированной высотой (например, YouTube) */
+iframe[height="300"] {
+  height: 300px;
+}
+/* Адаптивная обертка — применяется ко всем iframe */
+iframe {
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+/* Убираем визуальные дефекты в embed или maps */
+iframe[src*="google.com/maps"],
+iframe[src*="youtube.com"] {
+  border: none;
+}
+iframe[src*="google.com/maps"] {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9;
+  display: block;
+}
 /* Responsive Styles */
 @media (max-width: 1200px) {
   .main-menu-item {
